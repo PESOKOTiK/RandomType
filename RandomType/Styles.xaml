@@ -1,4 +1,10 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    
+    <Style TargetType="Window" x:Key="BlackTheme">
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding ThemeSwitcher}" Value="black">
+                <Setter Property="Background" Value="#323244"/>
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
 </ResourceDictionary>
