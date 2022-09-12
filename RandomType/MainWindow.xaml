@@ -19,7 +19,13 @@
         </Grid.RowDefinitions>
         <Border>
             <DockPanel LastChildFill="False">
-                <TextBlock Text="RandomType" FontSize="25" Margin="0 6"/>
+                <Image>
+                    <Image.Source>
+                        <BitmapImage UriSource="/icons/dice.png"/>
+                    </Image.Source>
+                </Image>
+                <TextBlock Text="RandomType" FontSize="25" Margin="0 6" />
+                <Button DockPanel.Dock="Right"/>
             </DockPanel>
         </Border>
     </Grid>

@@ -7,4 +7,12 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="icons\dice.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="icons\dice.png" />
+  </ItemGroup>
+
 </Project>
