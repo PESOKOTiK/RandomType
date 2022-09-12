@@ -19,7 +19,7 @@
         </Grid.RowDefinitions>
         <Border>
             <DockPanel LastChildFill="False">
-                <TextBlock Text="RandomType" FontSize="25" Margin="0 10"/>
+                <TextBlock Text="RandomType" FontSize="25" Margin="0 6"/>
             </DockPanel>
         </Border>
     </Grid>
