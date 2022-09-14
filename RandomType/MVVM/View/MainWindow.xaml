@@ -5,13 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RandomType" xmlns:viewmodel="clr-namespace:RandomType.MVVM.Viewmodel"
         mc:Ignorable="d"
+        SnapsToDevicePixels="True"
         WindowStyle="None"
+        
         AllowsTransparency="True"
         Style="{StaticResource WindowStyle}"
         Title="MainWindow" Height="450" Width="800">
     <Window.DataContext>
         <viewmodel:MainViewModel/>
     </Window.DataContext>
+    <Window.Resources>
+        
+    </Window.Resources>
+    <Window.InputBindings>
+        <KeyBinding Key="Esc" Command="{Binding MaximizeWindowCommand}"/>
+        <MouseBinding MouseAction="LeftClick" Command="{Binding DragMoveCommand}"/>
+    </Window.InputBindings>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
@@ -21,7 +30,7 @@
             <RowDefinition Height="40"/>
         </Grid.RowDefinitions>
         <Border BorderThickness="0 0 0 1" BorderBrush="Black">
-            <DockPanel LastChildFill="False">
+            <DockPanel LastChildFill="False" Style="{StaticResource dockmargin}">
                 <Image Margin="3">
                     <Image.Source>
                         <BitmapImage UriSource="/icons/dice.png"/>
