@@ -37,13 +37,13 @@
                         Command="{Binding CloseWindowCommand}"/>
                
                 <Button Style="{StaticResource ControlButtons}"
-                        Content="⛶" FontWeight="ExtraBold"
+                        Content="⛶"
                         x:Name="minmaxbtn"
                         FontSize="20" DockPanel.Dock="Right"
                         Command="{Binding MaximizeWindowCommand}"/>
 
                 <Button Style="{StaticResource ControlButtons}"
-                        Content="⎯" FontWeight="ExtraBold"
+                        Content="⎯" 
                         FontSize="25" DockPanel.Dock="Right"
                         Command="{Binding MinimizeWindowCommand}"/>
             </DockPanel>
