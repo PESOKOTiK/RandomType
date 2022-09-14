@@ -41,6 +41,10 @@
             <Trigger Property="IsMouseDirectlyOver" Value="True">
                 <Setter Property="Background" Value="#dbdbdb"/>
             </Trigger>
+
         </Style.Triggers>
+        <Style.Resources>
+            
+        </Style.Resources>
     </Style>
 </ResourceDictionary>

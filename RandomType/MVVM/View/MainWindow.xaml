@@ -30,6 +30,7 @@
                 <TextBlock Text="RandomType"
                            FontSize="25"
                            Margin="5"
+                           FontWeight="Bold"
                           />
                 <Button Style="{StaticResource ControlButtons}"
                         Content="🞮" FontSize="20" DockPanel.Dock="Right"
@@ -37,11 +38,14 @@
                
                 <Button Style="{StaticResource ControlButtons}"
                         Content="⛶" FontWeight="ExtraBold"
-                        FontSize="20" DockPanel.Dock="Right"/>
+                        x:Name="minmaxbtn"
+                        FontSize="20" DockPanel.Dock="Right"
+                        Command="{Binding MaximizeWindowCommand}"/>
 
                 <Button Style="{StaticResource ControlButtons}"
                         Content="⎯" FontWeight="ExtraBold"
-                        FontSize="25" DockPanel.Dock="Right"/>
+                        FontSize="25" DockPanel.Dock="Right"
+                        Command="{Binding MinimizeWindowCommand}"/>
             </DockPanel>
         </Border>
     </Grid>
