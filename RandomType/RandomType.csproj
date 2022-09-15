@@ -5,10 +5,15 @@
     <TargetFramework>net6.0-windows</TargetFramework>
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
+    <ApplicationIcon>main.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
     <None Remove="icons\dice.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="main.ico" />
   </ItemGroup>
 
   <ItemGroup>
