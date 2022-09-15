@@ -7,7 +7,6 @@
         mc:Ignorable="d"
         SnapsToDevicePixels="True"
         WindowStyle="None"
-        
         AllowsTransparency="True"
         Style="{StaticResource WindowStyle}"
         Title="MainWindow" Height="450" Width="800">
@@ -39,6 +38,7 @@
                 <TextBlock Text="RandomType"
                            FontSize="25"
                            Margin="5"
+                           FontFamily="{StaticResource LexendDeca}"
                            FontWeight="Bold"
                           />
                 <Button Style="{StaticResource ControlButtons}"
@@ -57,5 +57,7 @@
                         Command="{Binding MinimizeWindowCommand}"/>
             </DockPanel>
         </Border>
+
+        <TextBox Style="{StaticResource TextBoxWatermarked}" Grid.Row="2"/>
     </Grid>
 </Window>

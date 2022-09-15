@@ -9,6 +9,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Fonts\LexendDeca-Regular.ttf" />
+    <None Remove="Fonts\RobotoMono-Regular.ttf" />
     <None Remove="icons\dice.png" />
   </ItemGroup>
 
@@ -17,6 +19,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Fonts\LexendDeca-Regular.ttf">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Fonts\RobotoMono-Regular.ttf" />
     <Resource Include="icons\dice.png" />
   </ItemGroup>
 

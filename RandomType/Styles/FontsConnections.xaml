@@ -1,0 +1,5 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <FontFamily x:Key="LexendDeca">./Fonts/LexendDeca-Regular.ttf#Lexend Deca</FontFamily>
+    <FontFamily x:Key="LRobotoMono">./Fonts/RobotoMono-Regular.ttf#Roboto Mono</FontFamily>
+</ResourceDictionary>
