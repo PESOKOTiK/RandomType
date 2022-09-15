@@ -10,7 +10,7 @@ namespace RandomType.MVVM
 {
     public class ObservableObject : INotifyPropertyChanged
     {
-        public event PropertyChangedEventHandler PropertyChanged;
+        public event PropertyChangedEventHandler? PropertyChanged;
 
         public void OnPropertyChanged([CallerMemberName] string propertyname = null)
         {

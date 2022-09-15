@@ -1,4 +1,5 @@
 ﻿using RandomType.MVVM.Core;
+using RandomType.MVVM.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +12,14 @@ namespace RandomType.MVVM.Viewmodel
     public class MainViewModel:ObservableObject
     {
         public bool isMaximized;
+        private CustomTheme selectedTheme;
+
+        public CustomTheme SelectedTheme
+        {
+            get { return selectedTheme; }
+            set { selectedTheme = value;
+                OnPropertyChanged(); }
+        }
 
         public bool IsMaximized
         {
@@ -39,16 +48,7 @@ namespace RandomType.MVVM.Viewmodel
                 return System.Windows.WindowState.Maximized;
             }
         }
-
-
-
-        public bool CanDragMove()
-        {
-            App.Current.MainWindow.DragMove();
-            return true;
-        }
-
-
+        public void CanDragMove(){ App.Current.MainWindow.DragMove(); }
         public MainViewModel()
         {
             IsMaximized=false;

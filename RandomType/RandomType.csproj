@@ -20,8 +20,4 @@
     <Resource Include="icons\dice.png" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="MVVM\Models\" />
-  </ItemGroup>
-
 </Project>
