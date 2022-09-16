@@ -24,22 +24,24 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
             <RowDefinition Height="60"/>
+            <RowDefinition Height="60"/>
             <RowDefinition/>
             <RowDefinition Height="60"/>
             <RowDefinition Height="40"/>
         </Grid.RowDefinitions>
         <Border BorderThickness="0 0 0 1" BorderBrush="Black">
-            <DockPanel LastChildFill="False" Style="{StaticResource dockmargin}">
-                <Image Margin="3">
+            <DockPanel LastChildFill="False" Style ="{StaticResource dockmargin}">
+                <Image Margin="60 0 5 0">
                     <Image.Source>
-                        <BitmapImage UriSource="/icons/dice.png"/>
+                        <BitmapImage UriSource="/icons/keyboard.png"/>
                     </Image.Source>
                 </Image>
                 <TextBlock Text="RandomType"
                            FontSize="25"
-                           Margin="5"
+                           Margin="5 25 0 0"
                            FontFamily="{StaticResource LexendDeca}"
                            FontWeight="Bold"
+                           Height="27"
                           />
                 <Button Style="{StaticResource ControlButtons}"
                         Content="🞮" FontSize="20" DockPanel.Dock="Right"
