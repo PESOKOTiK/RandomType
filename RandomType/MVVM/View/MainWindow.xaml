@@ -22,7 +22,7 @@
     </Window.InputBindings>
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="50"/>
+            <RowDefinition Height="100"/>
             <RowDefinition Height="60"/>
             <RowDefinition Height="60"/>
             <RowDefinition/>
@@ -30,34 +30,53 @@
             <RowDefinition Height="40"/>
         </Grid.RowDefinitions>
         <Border BorderThickness="0 0 0 1" BorderBrush="Black">
-            <DockPanel LastChildFill="False" Style ="{StaticResource dockmargin}">
-                <Image Margin="60 0 5 0">
-                    <Image.Source>
-                        <BitmapImage UriSource="/icons/keyboard.png"/>
-                    </Image.Source>
-                </Image>
-                <TextBlock Text="RandomType"
+            <Grid Margin="20 0 0 0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <DockPanel Grid.Column="0" Grid.RowSpan="2">
+                    <Image>
+                        <Image.Source>
+                            <BitmapImage UriSource="/icons/keyboard.png"/>
+                        </Image.Source>
+                    </Image>
+                    <TextBlock Text="RandomType"
                            FontSize="25"
                            Margin="5 25 0 0"
                            FontFamily="{StaticResource LexendDeca}"
                            FontWeight="Bold"
                            Height="27"
                           />
-                <Button Style="{StaticResource ControlButtons}"
+
+                </DockPanel>
+
+
+                       
+                    <DockPanel Grid.Column="1" LastChildFill="False">
+                        <Button Style="{StaticResource ControlButtons}"
                         Content="🞮" FontSize="20" DockPanel.Dock="Right"
                         Command="{Binding CloseWindowCommand}"/>
-               
-                <Button Style="{StaticResource ControlButtons}"
+
+                        <Button Style="{StaticResource ControlButtons}"
                         Content="⛶"
                         x:Name="minmaxbtn"
                         FontSize="20" DockPanel.Dock="Right"
                         Command="{Binding MaximizeWindowCommand}"/>
 
-                <Button Style="{StaticResource ControlButtons}"
+                        <Button Style="{StaticResource ControlButtons}"
                         Content="⎯" 
                         FontSize="25" DockPanel.Dock="Right"
                         Command="{Binding MinimizeWindowCommand}"/>
-            </DockPanel>
+                    </DockPanel>
+
+
+            </Grid>
         </Border>
 
         <TextBox Style="{StaticResource TextBoxWatermarked}" Grid.Row="2"/>
