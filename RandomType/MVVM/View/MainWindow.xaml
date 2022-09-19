@@ -77,8 +77,6 @@
 
 
             </Grid>
-        </Border>
-
-        <TextBox Style="{StaticResource TextBoxWatermarked}" Grid.Row="2"/>
+        </Border> 
     </Grid>
 </Window>
