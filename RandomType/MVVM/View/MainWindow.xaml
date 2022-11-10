@@ -9,7 +9,7 @@
         WindowStyle="None"
         AllowsTransparency="True"
         Style="{StaticResource WindowStyle}"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800" Background="#323232">
     <Window.DataContext>
         <viewmodel:MainViewModel/>
     </Window.DataContext>
@@ -29,9 +29,10 @@
             <RowDefinition Height="60"/>
             <RowDefinition Height="40"/>
         </Grid.RowDefinitions>
-        <Border BorderThickness="0 0 0 1" BorderBrush="Black">
+        <Border>
             <Grid Margin="20 0 0 0">
                 <Grid.ColumnDefinitions>
+                    <ColumnDefinition  Width="65"/>
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
@@ -40,15 +41,16 @@
                     <RowDefinition/>
                 </Grid.RowDefinitions>
 
-                <DockPanel Grid.Column="0" Grid.RowSpan="2">
-                    <Image>
+                <DockPanel Grid.Column="1" Grid.RowSpan="2">
+                    <Image Width="60">
                         <Image.Source>
                             <BitmapImage UriSource="/icons/keyboard.png"/>
                         </Image.Source>
                     </Image>
                     <TextBlock Text="RandomType"
                            FontSize="25"
-                           Margin="5 25 0 0"
+                           Foreground="LightGray"
+                           Margin="5 0 0 0"
                            FontFamily="{StaticResource LexendDeca}"
                            FontWeight="Bold"
                            Height="27"
@@ -58,7 +60,7 @@
 
 
                        
-                    <DockPanel Grid.Column="1" LastChildFill="False">
+                    <DockPanel Grid.Column="2" LastChildFill="False">
                         <Button Style="{StaticResource ControlButtons}"
                         Content="🞮" FontSize="20" DockPanel.Dock="Right"
                         Command="{Binding CloseWindowCommand}"/>
@@ -70,7 +72,7 @@
                         Command="{Binding MaximizeWindowCommand}"/>
 
                         <Button Style="{StaticResource ControlButtons}"
-                        Content="⎯" 
+                        Content="-" Width="23"
                         FontSize="25" DockPanel.Dock="Right"
                         Command="{Binding MinimizeWindowCommand}"/>
                     </DockPanel>
