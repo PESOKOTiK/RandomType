@@ -3,7 +3,7 @@
 
     <Style TargetType="Window" x:Key="WindowStyle">
 
-        <Setter Property="Background" Value="#fafafb"/>
+        <!--<Setter Property="Background" Value="#fafafb"/>-->
         <!--black trigger-->
         <!--<Style.Triggers>
             <DataTrigger Binding="{Binding ThemeSwitcher}" Value="black">
@@ -12,6 +12,11 @@
         </Style.Triggers>-->
     </Style>
 
+    <Style TargetType="Border" x:Key="MainBorderStyle">
+        <Setter Property="CornerRadius" Value="40"/>
+        <Setter Property="Background" Value="#323232"/>
+    </Style>
+    
     <Style x:Key="dockmargin" TargetType="DockPanel">
         <Setter Property="Margin" Value="0"/>
         <Style.Triggers>

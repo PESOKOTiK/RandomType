@@ -7,29 +7,29 @@
         mc:Ignorable="d"
         SnapsToDevicePixels="True"
         WindowStyle="None"
-        AllowsTransparency="True"
         Style="{StaticResource WindowStyle}"
-        Title="MainWindow" Height="450" Width="800" Background="#323232">
+        Title="MainWindow" Height="450" Width="800" Background="Transparent" AllowsTransparency="True">
     <Window.DataContext>
         <viewmodel:MainViewModel/>
     </Window.DataContext>
     <Window.Resources>
-        
+
     </Window.Resources>
     <Window.InputBindings>
         <KeyBinding Key="Esc" Command="{Binding MaximizeWindowCommand}"/>
         <MouseBinding MouseAction="LeftClick" Command="{Binding DragMoveCommand}"/>
     </Window.InputBindings>
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="100"/>
-            <RowDefinition Height="60"/>
-            <RowDefinition Height="60"/>
-            <RowDefinition/>
-            <RowDefinition Height="60"/>
-            <RowDefinition Height="40"/>
-        </Grid.RowDefinitions>
-        <Border>
+    <Border Style="{StaticResource MainBorderStyle}">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="60"/>
+                <RowDefinition/>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="40"/>
+            </Grid.RowDefinitions>
+            <Border/>
             <Grid Margin="20 0 0 0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition  Width="65"/>
@@ -55,30 +55,30 @@
                            FontWeight="Bold"
                            Height="27"
                           />
-
                 </DockPanel>
 
 
-                       
-                    <DockPanel Grid.Column="2" LastChildFill="False">
-                        <Button Style="{StaticResource ControlButtons}"
+                <DockPanel Grid.Column="2" LastChildFill="False" Margin="0 0 10 0">
+                    <Button Style="{StaticResource ControlButtons}"
                         Content="🞮" FontSize="20" DockPanel.Dock="Right"
                         Command="{Binding CloseWindowCommand}"/>
 
-                        <Button Style="{StaticResource ControlButtons}"
+                    <Button Style="{StaticResource ControlButtons}"
                         Content="⛶"
                         x:Name="minmaxbtn"
                         FontSize="20" DockPanel.Dock="Right"
                         Command="{Binding MaximizeWindowCommand}"/>
 
-                        <Button Style="{StaticResource ControlButtons}"
+                    <Button Style="{StaticResource ControlButtons}"
                         Content="-" Width="23"
                         FontSize="25" DockPanel.Dock="Right"
                         Command="{Binding MinimizeWindowCommand}"/>
-                    </DockPanel>
+                </DockPanel>
 
 
             </Grid>
-        </Border> 
-    </Grid>
+
+        </Grid>
+
+    </Border>
 </Window>
