@@ -12,10 +12,14 @@
     <None Remove="Fonts\LexendDeca-Regular.ttf" />
     <None Remove="Fonts\RobotoMono-Regular.ttf" />
     <None Remove="icons\keyboard.png" />
+    <None Remove="MVVM\Core\englishwords.txt" />
   </ItemGroup>
 
   <ItemGroup>
     <Content Include="main.ico" />
+    <Resource Include="MVVM\Core\englishwords.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
   <ItemGroup>

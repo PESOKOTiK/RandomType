@@ -77,7 +77,14 @@
 
 
             </Grid>
-
+            <TextBox Text="{Binding HardLevel}" Grid.Row="2"/>
+            <TextBox Grid.Row="3" Text="{Binding Text,UpdateSourceTrigger=PropertyChanged}"
+                       TextAlignment="Center" FontFamily="Lexend Deca" FontWeight="Bold" FontSize="20" TextWrapping="WrapWithOverflow"
+                     VerticalContentAlignment="Center" HorizontalContentAlignment="Center" IsReadOnly="True"/>
+            <TextBox Grid.Row="3" Text="{Binding Text, UpdateSourceTrigger=PropertyChanged}"
+                     TextAlignment="Center" FontFamily="Lexend Deca" FontWeight="Bold" FontSize="20" TextWrapping="WrapWithOverflow"
+                     VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+            <Button Grid.Row="4" Command="{Binding MainCommand}"/>
         </Grid>
 
     </Border>
