@@ -6,11 +6,21 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows;
+using static RandomType.MVVM.Core.EnumToBool;
+
+
 
 namespace RandomType.MVVM.Viewmodel
 {
+    public enum TypeMode
+    {
+        Time = 0,
+        Words = 1
+    }
     public class MainViewModel:ObservableObject
     {
+
+        
         public bool isMaximized;
         private CustomTheme selectedTheme;
         public CustomTheme SelectedTheme
@@ -61,6 +71,13 @@ namespace RandomType.MVVM.Viewmodel
             }
         }
         public void CanDragMove(){ App.Current.MainWindow.DragMove(); }
+        //settings commands and props
+        public RelayCommand Settings1Command { get; set; }
+        public RelayCommand Settings2Command { get; set; }
+        public RelayCommand Settings3Command { get; set; }
+        public RelayCommand Settings4Command { get; set; }
+        private TypeMode _typeMode;
+        public TypeMode Mode { get { return _typeMode; } set { _typeMode = value; OnPropertyChanged(); } }
         public MainViewModel()
         {
             Text = "";
@@ -88,7 +105,7 @@ namespace RandomType.MVVM.Viewmodel
                     while (!sr.EndOfStream)
                     {
                         line = sr.ReadLine();
-                        if (line.Length == hard)
+                        if (line.Length == hard||line.Length==1)
                         {
                             ghostwords.Add(new Words(line, line.Length));
                         }
@@ -101,7 +118,8 @@ namespace RandomType.MVVM.Viewmodel
             {
                 Random r = new();
                 int max = ghostwords.Count;
-                sb.Append(ghostwords.ElementAt(r.Next(0, max)));
+                if(max>0)
+                    sb.Append(ghostwords.ElementAt(r.Next(0, max)));
                 sb.Append(" ");
             }
             Text = sb.ToString();

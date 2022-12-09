@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:RandomType" xmlns:viewmodel="clr-namespace:RandomType.MVVM.Viewmodel"
+        xmlns:local="clr-namespace:RandomType" xmlns:viewmodel="clr-namespace:RandomType.MVVM.Viewmodel" xmlns:core="clr-namespace:RandomType.MVVM.Core"
         mc:Ignorable="d"
         SnapsToDevicePixels="True"
         WindowStyle="None"
@@ -13,7 +13,7 @@
         <viewmodel:MainViewModel/>
     </Window.DataContext>
     <Window.Resources>
-
+        <core:EnumToBool x:Key="ModeConverter"/>
     </Window.Resources>
     <Window.InputBindings>
         <KeyBinding Key="Esc" Command="{Binding MaximizeWindowCommand}"/>
@@ -77,7 +77,57 @@
 
 
             </Grid>
-            <TextBox Text="{Binding HardLevel}" Grid.Row="2"/>
+            <Border Grid.Row="1"
+                    Margin="150 15"
+                    Width="455"
+                    BorderThickness="1"
+                    Background="#FF282727"
+                    CornerRadius="5"
+                    BorderBrush="#2f2f2f">
+                <DockPanel>
+                    <ToggleButton Margin="5"
+                                  Width="90"
+                                  Padding="0 0 0 2"
+                                  Content="@ punctuation"/>
+                    <ToggleButton Margin="5"
+                                  Width="70"
+                                  Padding="0 0 0 2"
+                                  Content="# numbers"/>
+                    <!--palka-->
+                    <ToggleButton Margin="5"
+                                  Width="55"
+                                  Padding="0 0 0 2"
+                                  Content="🕒 time"
+                                  IsChecked="{Binding Mode,Converter={StaticResource ModeConverter},ConverterParameter={x:Static viewmodel:TypeMode.Time},UpdateSourceTrigger=PropertyChanged}"/>
+                    <ToggleButton Margin="5"
+                                  Width="60"
+                                  Padding="0 0 0 2"
+                                  Content="𝐀 words"
+                                  IsChecked="{Binding Mode,Converter={StaticResource ModeConverter},ConverterParameter={x:Static viewmodel:TypeMode.Words},UpdateSourceTrigger=PropertyChanged}"/>
+                    <!--palka-->
+                    <ToggleButton Margin="5"
+                                  Width="25"
+                                  x:Name="Settings1"
+                                  Padding="0 0 0 2"
+                                  Content="15"/>
+                    <ToggleButton Margin="5"
+                                  Width="25"
+                                  x:Name="Settings2"
+                                  Padding="0 0 0 2"
+                                  Content="30"/>
+                    <ToggleButton Margin="5"
+                                  Width="25"
+                                  x:Name="Settings3"
+                                  Padding="0 0 0 2"
+                                  Content="60"/>
+                    <ToggleButton Margin="5"
+                                  Width="25"
+                                  x:Name="Settings4"
+                                  Padding="0 0 0 2"
+                                  Content="120"/>
+                </DockPanel>
+            </Border>
+            <TextBox Text="{Binding Mode}" Grid.Row="2"/>
             <TextBox Grid.Row="3" Text="{Binding Text,UpdateSourceTrigger=PropertyChanged}"
                        TextAlignment="Center" FontFamily="Lexend Deca" FontWeight="Bold" FontSize="20" TextWrapping="WrapWithOverflow"
                      VerticalContentAlignment="Center" HorizontalContentAlignment="Center" IsReadOnly="True"/>
