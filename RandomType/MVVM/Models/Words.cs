@@ -8,18 +8,18 @@ namespace RandomType.MVVM.Models
 {
     public class Words
     {
-        public string? word;
-        public int lehgth;
+        public string? Word;
+        public int Lehgth;
 
-        public Words(string Word,int Length)
+        public Words(string? word,int length)
         {
-            word=Word;
-            lehgth=Length;
+            this.Word=word;
+            Lehgth=length;
         }
 
         public override string ToString()
         {
-            return word;
+            return Word;
         }
     }
 }
